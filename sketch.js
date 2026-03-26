@@ -1,5 +1,5 @@
 let SIZE = 150;
-let NUMBER_OF_CIRCLES = 200;
+let NUMBER_OF_CIRCLES = 400;
 let AMPLITUDE = 150;
 
 
@@ -14,10 +14,17 @@ function setup() {
     // operazioni 
     let progress = count / NUMBER_OF_CIRCLES; // valore normalizzato (0-1)
 
-
+    // posizione
     let centralx = width / 2;
     let x = sin (progress * 10 ) * AMPLITUDE + centralx;
     let y = height * progress;
+
+    // colore
+    let r = 127 + sin (progress * 3 ) * 127;
+    let g = 127 + sin (progress * 10 ) * 127;
+    let b = 127 + sin (progress * 13 ) * 127;
+    fill(r, g, b);
+
     circle (x, y, SIZE);
 }
 }
