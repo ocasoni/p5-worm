@@ -1,5 +1,6 @@
 let SIZE = 150;
 let NUMBER_OF_CIRCLES = 200;
+let AMPLITUDE = 150;
 
 
 function setup() {
@@ -11,10 +12,12 @@ function setup() {
   // for (valore di partenza; condizione per cui il for va avanti; come cambia il valore ad ogni ciclo) {)
   for (let count = 0; count < NUMBER_OF_CIRCLES; count+=1) {
     // operazioni 
-    let progress = count / NUMBER_OF_CIRCLES; // valore 
+    let progress = count / NUMBER_OF_CIRCLES; // valore normalizzato (0-1)
 
-    let x = width * progress;
-    let y = height/2;
+
+    let centralx = width / 2;
+    let x = sin (progress * 10 ) * AMPLITUDE + centralx;
+    let y = height * progress;
     circle (x, y, SIZE);
 }
 }
