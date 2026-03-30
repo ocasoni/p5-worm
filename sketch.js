@@ -6,7 +6,7 @@ let time = 0;
 
 function setup() {
   console.log ("Setup")
-  createCanvas(900, 800);
+  createCanvas(1540, 810);
   
   noStroke();
 }
